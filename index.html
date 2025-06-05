@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ACPVL - Associação Caririense de Paramotor e Voo Livre</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0369a1',
+                        secondary: '#f97316',
+                        accent: '#22c55e'
+                    },
+                    fontFamily: {
+                        heading: ['Montserrat', 'sans-serif'],
+                        body: ['Open Sans', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero {
+            background: linear-gradient(rgba(3, 105, 161, 0.8), rgba(2, 83, 126, 0.9)), url('https://source.unsplash.com/random/1920x1080/?paramotor') center/cover;
+        }
+        .platform-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .platform-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+        .parallax {
+            background-attachment: fixed;
+        }
+    </style>
+</head>
+<body class="font-body bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-md fixed w-full z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <div class="bg-blue-500 w-10 h-10 rounded-full flex items-center justify-center mr-3">
+                    <i class="fas fa-parachute-box text-white text-xl"></i>
+                </div>
+                <h1 class="text-2xl font-heading font-bold">
+                    <span class="text-primary">ACP</span><span class="text-secondary">VL</span>
+                </h1>
+            </div>
+            
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden text-primary">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+            
+            <!-- Navigation -->
+            <nav id="nav-menu" class="hidden md:flex space-x-8">
+                <a href="#home" class="text-primary font-semibold hover:text-secondary">Início</a>
+                <a href="#about" class="text-gray-600 hover:text-primary">Sobre</a>
+                <a href="#platforms" class="text-gray-600 hover:text-primary">Plataformas</a>
+                <a href="#gallery" class="text-gray-600 hover:text-primary">Galeria</a>
+                <a href="#contact" class="text-gray-600 hover:text-primary">Contato</a>
+            </nav>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white py-4 px-2 border-t">
+            <a href="#home" class="block py-2 px-4 text-primary font-semibold">Início</a>
+            <a href="#about" class="block py-2 px-4 text-gray-600">Sobre</a>
+            <a href="#platforms" class="block py-2 px-4 text-gray-600">Plataformas</a>
+            <a href="#gallery" class="block py-2 px-4 text-gray-600">Galeria</a>
+            <a href="#contact" class="block py-2 px-4 text-gray-600">Contato</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero pt-20 pb-32 text-white">
+        <div class="container mx-auto px-4 text-center pt-20">
+            <h1 class="text-5xl md:text-6xl font-heading font-bold mb-6 animate-pulse">
+                Conquistando os céus do Cariri
+            </h1>
+            <p class="text-xl max-w-2xl mx-auto mb-10">
+                Associação Caririense de Paramotor e Voo Livre - unindo paixão, aventura e o espírito livre da região
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#contact" class="bg-secondary hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-full transition-all transform hover:scale-105">
+                    Junte-se a nós
+                </a>
+                <a href="#platforms" class="bg-transparent border-2 border-white hover:bg-white hover:text-primary text-white font-bold py-3 px-8 rounded-full transition-all">
+                    Nossas Plataformas
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-heading font-bold text-primary mb-4">Sobre a ACPVL</h2>
+                <div class="w-24 h-1 bg-secondary mx-auto"></div>
+            </div>
+            
+            <div class="flex flex-col lg:flex-row gap-12 items-center">
+                <div class="lg:w-1/2">
+                    <div class="rounded-xl overflow-hidden shadow-xl">
+                        <div class="bg-gray-200 border-2 border-dashed rounded-xl w-full h-96"></div>
+                    </div>
+                </div>
+                
+                <div class="lg:w-1/2">
+                    <h3 class="text-3xl font-heading font-bold text-gray-800 mb-4">
+                        Voando alto desde 2010
+                    </h3>
+                    <p class="text-gray-600 mb-6">
+                        A Associação Caririense de Paramotor e Voo Livre nasceu da paixão pela liberdade de voar e da determinação de unir entusiastas da aviação esportiva na região do Cariri.
+                    </p>
+                    <p class="text-gray-600 mb-8">
+                        Hoje contamos com mais de 50 associados ativos que compartilham conhecimento, experiências e promovem a prática segura do paramotor em nossos céus maravilhosos.
+                    </p>
+                    
+                    <div class="flex items-start mb-8">
+                        <div class="bg-primary rounded-full p-3 mr-4">
+                            <i class="fas fa-user text-white text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-bold font-heading text-gray-800">Presidente: Marconi Alves Silva</h4>
+                            <p class="text-gray-600">
+                                <i class="fas fa-phone-alt mr-2"></i> (88) 98121-8422
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="flex items-center">
+                            <div class="bg-accent rounded-full p-2 mr-3">
+                                <i class="fas fa-users text-white"></i>
+                            </div>
+                            <p class="font-semibold">50+ Membros</p>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="bg-accent rounded-full p-2 mr-3">
+                                <i class="fas fa-map-marked-alt text-white"></i>
+                            </div>
+                            <p class="font-semibold">4 Plataformas</p>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="bg-accent rounded-full p-2 mr-3">
+                                <i class="fas fa-calendar-check text-white"></i>
+                            </div>
+                            <p class="font-semibold">Eventos Mensais</p>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="bg-accent rounded-full p-2 mr-3">
+                                <i class="fas fa-shield-alt text-white"></i>
+                            </div>
+                            <p class="font-semibold">Instrução Segura</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Platforms Section -->
+    <section id="platforms" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-heading font-bold text-primary mb-4">Nossas Plataformas</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Locais de decolagem que oferecem vistas deslumbrantes e condições ideais para voo</p>
+                <div class="w-24 h-1 bg-secondary mx-auto mt-4"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Platform 1 -->
+                <div class="platform-card bg-white rounded-xl overflow-hidden shadow-lg">
+                    <div class="h-48 bg-gray-300"></div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-heading font-bold text-gray-800">Mirante do Horto</h3>
+                            <span class="bg-primary text-white text-xs py-1 px-3 rounded-full">Juazeiro do Norte</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">
+                            Altitude privilegiada com vista panorâmica de toda a região, ponto de encontro tradicional dos pilotos.
+                        </p>
+                        <div class="flex items-center text-sm text-gray-500">
+                            <i class="fas fa-wind mr-2 text-secondary"></i>
+                            Condições: Ventos constantes, decolagem fácil
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Platform 2 -->
+                <div class="platform-card bg-white rounded-xl overflow-hidden shadow-lg">
+                    <div class="h-48 bg-gray-300"></div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-heading font-bold text-gray-800">Plataforma Crato</h3>
+                            <span class="bg-primary text-white text-xs py-1 px-3 rounded-full">Crato</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">
+                            Localizada em um ponto estratégico da Chapada do Araripe, oferece vistas deslumbrantes da floresta nacional.
+                        </p>
+                        <div class="flex items-center text-sm text-gray-500">
+                            <i class="fas fa-wind mr-2 text-secondary"></i>
+                            Condições: Térmicas excelentes, rotas variadas
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Platform 3 -->
+                <div class="platform-card bg-white rounded-xl overflow-hidden shadow-lg">
+                    <div class="h-48 bg-gray-300"></div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-heading font-bold text-gray-800">Serra do Araripe</h3>
+                            <span class="bg-primary text-white text-xs py-1 px-3 rounded-full">CE/PE</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">
+                            Plataforma mítica com pouso nas dunas, perfeita para voos de longa distância com paisagens variadas.
+                        </p>
+                        <div class="flex items-center text-sm text-gray-500">
+                            <i class="fas fa-wind mr-2 text-secondary"></i>
+                            Condições: Ventos constantes, vistas amplas
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Platform 4 -->
+                <div class="platform-card bg-white rounded-xl overflow-hidden shadow-lg">
+                    <div class="h-48 bg-gray-300"></div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-heading font-bold text-gray-800">Arajara Park</h3>
+                            <span class="bg-primary text-white text-xs py-1 px-3 rounded-full">Barbalha</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">
+                            Plataforma da Serra do Arajara com vista privilegiada do vale e acesso às áreas naturais preservadas.
+                        </p>
+                        <div class="flex items-center text-sm text-gray-500">
+                            <i class="fas fa-wind mr-2 text-secondary"></i>
+                            Condições: Rotas panorâmicas, decolagem técnica
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Parallax Section -->
+    <section class="py-32 parallax" style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.6)), url('https://source.unsplash.com/random/1920x1080/?sky') center/cover;">
+        <div class="container mx-auto px-4 text-center text-white">
+            <i class="fas fa-quote-left text-5xl text-primary opacity-30"></i>
+            <blockquote class="text-2xl md:text-3xl italic max-w-3xl mx-auto">
+                "Voar é mais do que um esporte ou profissão; é uma paixão, um vício, um desejo profundo de que a alma manifesta quando foge aos limites do corpo"
+            </blockquote>
+            <p class="mt-8 text-xl font-heading font-semibold">- Marconi Alves Silva, Presidente</p>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-heading font-bold text-primary mb-4">Galeria de Voo</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Momentos únicos registrados durante nossos voos pela região do Cariri</p>
+                <div class="w-24 h-1 bg-secondary mx-auto mt-4"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="rounded-xl overflow-hidden shadow-lg h-64 bg-gray-300"></div>
+                <div class="rounded-xl overflow-hidden shadow-lg h-64 bg-gray-300"></div>
+                <div class="rounded-xl overflow-hidden shadow-lg h-64 bg-gray-300"></div>
+                <div class="rounded-xl overflow-hidden shadow-lg h-64 bg-gray-300 md:col-span-2"></div>
+                <div class="rounded-xl overflow-hidden shadow-lg h-64 bg-gray-300"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-heading font-bold text-primary mb-4">Entre em Contato</h2>
+                <p class="text-gray-600">Pronto para voar conosco? Temos todo o suporte para iniciantes e experientes</p>
+                <div class="w-24 h-1 bg-secondary mx-auto mt-4"></div>
+            </div>
+            
+            <div class="max-w-5xl mx-auto bg-white rounded-xl shadow-xl overflow-hidden">
+                <div class="grid grid-cols-1 md:grid-cols-2">
+                    <div class="p-10 bg-primary text-white">
+                        <h3 class="text-2xl font-heading font-bold mb-6">Informações de Contato</h3>
+                        
+                        <div class="flex items-start mb-8">
+                            <div class="w-12 h-12 rounded-full bg-secondary flex items-center justify-center flex-shrink-0 mr-4">
+                                <i class="fas fa-user text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">Presidente</h4>
+                                <p>Marconi Alves Silva</p>
+                                <p><i class="fas fa-phone-alt mr-2"></i> (88) 98121-8422</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start mb-8">
+                            <div class="w-12 h-12 rounded-full bg-secondary flex items-center justify-center flex-shrink-0 mr-4">
+                                <i class="fas fa-map-marker-alt text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">Nossa Sede</h4>
+                                <p>Juazeiro do Norte - CE</p>
+                                <p>Região do Cariri</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 rounded-full bg-secondary flex items-center justify-center flex-shrink-0 mr-4">
+                                <i class="fas fa-envelope text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">Email</h4>
+                                <p>contato@acpvl.org.br</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="p-10">
+                        <h3 class="text-2xl font-heading font-bold mb-6 text-gray-800">Envie uma mensagem</h3>
+                        <form>
+                            <div class="mb-4">
+                                <input type="text" placeholder="Nome completo" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                            </div>
+                            <div class="mb-4">
+                                <input type="email" placeholder="Email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                            </div>
+                            <div class="mb-4">
+                                <input type="tel" placeholder="Telefone" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                            </div>
+                            <div class="mb-4">
+                                <textarea placeholder="Sua mensagem" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"></textarea>
+                            </div>
+                            <button class="w-full bg-primary hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-lg transition-all">
+                                Enviar Mensagem
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-16 pb-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <h4 class="text-xl font-heading font-bold mb-4">
+                        <span class="text-primary">ACP</span><span class="text-secondary">VL</span>
+                    </h4>
+                    <p class="text-gray-400">
+                        Promovendo a prática segura e responsável do voo livre no Cariri cearense desde 2010.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Links Rápidos</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-white">Início</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-white">Sobre Nós</a></li>
+                        <li><a href="#platforms" class="text-gray-400 hover:text-white">Plataformas</a></li>
+                        <li><a href="#gallery" class="text-gray-400 hover:text-white">Galeria</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white">Contato</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Plataformas</h4>
+                    <ul class="space-y-2">
+                        <li class="text-gray-400">Mirante do Horto - JN</li>
+                        <li class="text-gray-400">Serra do Araripe - Crato</li>
+                        <li class="text-gray-400">Serra do Arajara - Barbalha</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Siga-nos</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-pink-600 flex items-center justify-center">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-blue-400 flex items-center justify-center">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-red-500 flex items-center justify-center">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="pt-8 border-t border-gray-800 text-center text-gray-500">
+                <p>&copy; 2023 ACPVL - Associação Caririense de Paramotor e Voo Livre. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="hidden fixed bottom-6 right-6 w-12 h-12 rounded-full bg-primary text-white shadow-lg flex items-center justify-center">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Close mobile menu when clicking a link
+        const mobileLinks = document.querySelectorAll('#mobile-menu a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+        
+        // Back to top button
+        const backToTopButton = document.getElementById('back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('hidden');
+            } else {
+                backToTopButton.classList.add('hidden');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
